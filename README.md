@@ -40,16 +40,16 @@ health-ca-analysis/
 │   └── README.md                   # Data source and variable descriptions
 │
 ├── outputs/
-│   └── README.md                   # Placeholder — generated plots saved here
+│   └── README.md
 │
 ├── docs/
-│   └── methodology.md              # Statistical background and formulas
+│   └── methodology.md
 │
 ├── tests/
 │   └── test_pipeline.R             # Unit tests for data prep & CA functions
 │
-├── main.R                          # Entry point — runs full pipeline
-├── DESCRIPTION                     # Project metadata (R package style)
+├── main.R                          # Entry point
+├── DESCRIPTION                     # Project metadata
 └── README.md                       # This file
 ```
 
@@ -83,13 +83,13 @@ source("R/05_visualizations.R")
 
 Place your CDC dataset as `data/cdc.csv`. The file should contain at minimum:
 
-| Column     | Type        | Description                              |
-|------------|-------------|------------------------------------------|
-| `genhlth`  | categorical | Self-rated general health (excellent–poor)|
-| `exerany`  | binary      | Exercise in past month (0/1)             |
-| `hlthplan` | binary      | Health plan coverage (0/1)               |
-| `smoke100` | binary      | Smoked 100+ cigarettes (0/1)             |
-| `gender`   | categorical | Respondent gender (m/f)                  |
+| Column     | Type        | Description                                |
+| ---------- | ----------- | ------------------------------------------ |
+| `genhlth`  | categorical | Self-rated general health (excellent–poor) |
+| `exerany`  | binary      | Exercise in past month (0/1)               |
+| `hlthplan` | binary      | Health plan coverage (0/1)                 |
+| `smoke100` | binary      | Smoked 100+ cigarettes (0/1)               |
+| `gender`   | categorical | Respondent gender (m/f)                    |
 
 ---
 
@@ -99,27 +99,27 @@ Place your CDC dataset as `data/cdc.csv`. The file should contain at minimum:
 
 The first CA dimension explains the largest share of variance and arranges health categories along a behavioral gradient:
 
-| Category         | Type   | Dim 1 Coordinate |
-|------------------|--------|-----------------|
-| excellent        | Row    | −0.1414         |
-| very good        | Row    | −0.0735         |
-| good             | Row    | 0.0762          |
-| fair             | Row    | 0.2315          |
-| poor             | Row    | 0.4011          |
-| Yes_Exercise     | Column | −0.1346         |
-| No_Smoke         | Column | −0.1158         |
-| No_Exercise      | Column | 0.3948          |
-| Yes_Smoke        | Column | 0.1296          |
+| Category     | Type   | Dim 1 Coordinate |
+| ------------ | ------ | ---------------- |
+| excellent    | Row    | −0.1414          |
+| very good    | Row    | −0.0735          |
+| good         | Row    | 0.0762           |
+| fair         | Row    | 0.2315           |
+| poor         | Row    | 0.4011           |
+| Yes_Exercise | Column | −0.1346          |
+| No_Smoke     | Column | −0.1158          |
+| No_Exercise  | Column | 0.3948           |
+| Yes_Smoke    | Column | 0.1296           |
 
 **Key finding:** Exercise and non-smoking are co-located with better health; sedentary and smoking profiles cluster near fair/poor health.
 
 ### Cluster Summary
 
-| Cluster | Health Categories        | Behavioral Profile            |
-|---------|--------------------------|-------------------------------|
-| 1       | Excellent, Very Good     | High exercise, low smoking    |
-| 2       | Good, Fair               | Moderate exercise, mixed      |
-| 3       | Poor                     | Low exercise, higher smoking  |
+| Cluster | Health Categories    | Behavioral Profile           |
+| ------- | -------------------- | ---------------------------- |
+| 1       | Excellent, Very Good | High exercise, low smoking   |
+| 2       | Good, Fair           | Moderate exercise, mixed     |
+| 3       | Poor                 | Low exercise, higher smoking |
 
 ---
 
@@ -163,6 +163,6 @@ This project is licensed under the MIT License — see [`LICENSE`](LICENSE) for 
 
 ## 📚 References
 
-- Alhuzali, T., Beh, E. J., & Stojanovski, E. (2022). Multiple correspondence analysis as a tool for examining Nobel Prize data. *PLOS ONE*, 17(4).
-- Žlahtič, B. et al. (2024). The role of correspondence analysis in medical research. *Frontiers in Public Health*, 12.
-- Moussa, M. A. A., & Ouda, B. A. (2021). Correspondence analysis of contingency tables. *Computer Methods and Programs in Biomedicine*, 27(2), 111–119.
+- Alhuzali, T., Beh, E. J., & Stojanovski, E. (2022). Multiple correspondence analysis as a tool for examining Nobel Prize data. _PLOS ONE_, 17(4).
+- Žlahtič, B. et al. (2024). The role of correspondence analysis in medical research. _Frontiers in Public Health_, 12.
+- Moussa, M. A. A., & Ouda, B. A. (2021). Correspondence analysis of contingency tables. _Computer Methods and Programs in Biomedicine_, 27(2), 111–119.
