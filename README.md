@@ -151,7 +151,6 @@ See [`docs/methodology.md`](docs/methodology.md) for full derivations.
 - ✅ Mosaic plot for exercise × health contingency
 - ✅ Dimension descriptions via `dimdesc()`
 - ✅ Unit tests for data preparation and table construction
-- ✅ Easily extensible to additional behavioral variables
 
 ---
 
