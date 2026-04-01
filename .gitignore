@@ -1,0 +1,18 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Generated outputs
+outputs/*.png
+outputs/*.pdf
+outputs/*.csv
+
+# Data (not committed — see data/README.md)
+data/cdc.csv
+data/*.csv
+
+# OS
+.DS_Store
+Thumbs.db

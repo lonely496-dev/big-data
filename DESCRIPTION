@@ -1,0 +1,20 @@
+Package: HealthCAAnalysis
+Title: Health Behavior Correspondence Analysis
+Version: 1.0.0
+Date: 2024-01-01
+Description: Correspondence analysis and hierarchical clustering applied to CDC
+    health survey data. Explores associations between self-rated health status
+    and behavioral variables including exercise participation, smoking history,
+    health plan coverage, and gender.
+Imports:
+    FactoMineR (>= 2.8),
+    factoextra (>= 1.0.7),
+    dplyr (>= 1.1.0),
+    ggplot2 (>= 3.4.0),
+    scales (>= 1.2.0)
+Suggests:
+    ggrepel (>= 0.9.3),
+    testthat (>= 3.0.0)
+License: MIT
+Encoding: UTF-8
+RoxygenNote: 7.2.3
